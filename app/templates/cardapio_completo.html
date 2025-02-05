@@ -1,0 +1,10 @@
+{% extends "card.html" %}
+{% block content %}
+
+<h2></h2>
+
+{% for prato in cardapio %}
+    {% include '_pratos.html' %}
+{% endfor %}
+
+{% endblock %}

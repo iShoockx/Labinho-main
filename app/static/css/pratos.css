@@ -1,0 +1,21 @@
+ /*configuraçao do conteudo*/
+
+.prato {
+    margin: 0% 0%;
+}
+
+.comment {
+    color: rgb(102, 102, 102);
+    margin: 0%;
+}
+
+.price {
+    margin-top: 15%;
+}
+
+.imagem {
+    width: 10vw;
+
+    border-radius: 10px;
+    margin-left: 5vw;
+}

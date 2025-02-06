@@ -8,8 +8,7 @@
 }
 
 .navbar{
-    padding: 10px;
-    background-color: black;
+    height: 100px;
 }
 
 /* HEADER */
@@ -57,7 +56,6 @@
     position: absolute;
     display: flex;
     visibility: visible;
-    height: 86.8vh;
     width: auto;
     padding-right: 100px;
     padding-left: 100px;

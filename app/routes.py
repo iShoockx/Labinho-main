@@ -149,6 +149,27 @@ def alterarCargo():
     return render_template('mudar_cargo.html', title='Atualização', user=user)
 
 
+
+### --- EVENTOS --- ### 
+
+@app.route('/eventos')
+def pag_eventos():
+    '''
+    Renderiza a página do eventos do restaurante  
+    '''
+    if 'username' in session:  
+        username = session['username']
+        cargo = alquimias.resgatar_cargo(username)  # Obtém o cargo do usuário
+        user = {'username': username, 'cargo': cargo}  # Passa o cargo para o template
+    else:
+        user = None
+        cargo = 'cliente'
+
+    pagina = 'EVENTOS'
+    texto = 'Agende um evento em nosso restaurante'
+
+    return render_template('eventos.html', title='Eventos', pagina=pagina, texto=texto, user=user)
+
 ### --- CARDAPIO --- ###
 
 @app.route('/cardapio')
@@ -359,7 +380,7 @@ def carrinho():
 
     return render_template(
         'carrinho.html', 
-        title='Home', 
+        title='Carrinho', 
         user=user,
         carrinho=carrinho,
         total=total

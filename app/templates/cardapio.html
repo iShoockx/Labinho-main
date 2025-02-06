@@ -1,36 +1,73 @@
 {% extends "card.html" %}
 {% block content %}
 
-<h2> Individuais </h2>
-{% for prato in individuais %}
-    {% include '_pratos.html' %}
-{% endfor %}
-<div>
-    <form action="{{ url_for('cardapioCompleto', tipo='Individual') }}" method="GET">
-        <button type="submit">Ver mais</button>
-    </form>
-</div>  
-<hr>
+<div class="background2">
+    <div class="aba-cardapio">
+        <button class="collapsible"><h2>Individuais</h2></button>
+        <div class="content">
+            <div class="boxes">
+                <div class="box1">
+                    <div class = "text">
+                        
+                        {% for prato in individuais %}
+                            {% include '_pratos.html' %}
+                        {% endfor %}
 
-<h2> Porções </h2>
-{% for prato in porcoes %}
-    {% include '_pratos.html' %}
-{% endfor %}
-<div>
-    <form action="{{ url_for('cardapioCompleto', tipo='Porção') }}" method="GET">
-        <button type="submit">Ver mais</button>
-    </form>
-</div>  
-<hr>
+                        <div>
+                            <form action="{{ url_for('cardapioCompleto', tipo='Individual') }}" method="GET">
+                                <button type="submit">Ver mais</button>
+                            </form>
+                        </div> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
-<h2> Bebidas </h2>
-{% for prato in bebidas %}
-    {% include '_pratos.html' %}
-{% endfor %}
-<div>
-    <form action="{{ url_for('cardapioCompleto', tipo='Bebida') }}" method="GET">
-        <button type="submit">Ver mais</button>
-    </form>
-</div>  
+    <div class="aba-cardapio">
+        <button class="collapsible"><h2>Porçoes</h2></button>
+        <div class="content">
+            <div class="boxes">
+                <div class="box1">
+                    <div class = "text">
+                        {% for prato in porcoes %}
+                            {% include '_pratos.html' %}
+                        {% endfor %}
+
+                        <div>
+                            <form action="{{ url_for('cardapioCompleto', tipo='Porção') }}" method="GET">
+                                <button type="submit">Ver mais</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="aba-cardapio">
+        <button class="collapsible"><h2>Bebidas</h2></button>
+        <div class="content">
+            <div class="boxes">
+                <div class="box1">
+                    <div class = "text">
+                        {% for prato in bebidas %}
+                            {% include '_pratos.html' %}
+                        {% endfor %}
+                        
+                        <div>
+                            <form action="{{ url_for('cardapioCompleto', tipo='Bebida') }}" method="GET">
+                                <button type="submit">Ver mais</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+
 {% endblock %}
 

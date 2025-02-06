@@ -1,0 +1,40 @@
+{% extends "card.html" %}
+
+{% block content %}
+
+<main>
+    <div class="foto">
+        <div class="texto" id="salao" style="text-align: center;">
+            <h2>Espaço</h2>
+            <p>Nosso salão de eventos se localiza na parte de cima do restaurante e pode ser reservado por meio de um <strong>orçamento</strong>. comporta até 80 pessoas e oferece uma experiência completa com uma variedade de instalações e serviços.</p></div>
+    </div>
+
+    <div class="foto">
+        <div class="texto">
+            <h2 style="text-align: center;">Serviço</h2>
+            <p>Para seu evento, nosso espaço contará com garçons para servi-los a todo momento. Alem de caixas de som para tocar as músicas que desejar no seu evento. Segue abaixo algumas fotos do ambiente.</p>   
+        </div>
+    </div>
+
+    <div>
+        <h1 style="text-align: center;">Fotos</h1>
+
+    </div>
+</main>
+<section class="secao-fotos">
+    <div class="separacao">
+        <div class="colecao">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/547300f5-5aa7-4fc1-8bdb-7715bb6d4718.jpeg')  }}" alt="" style="border-radius: 40px;">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/5a6e6e63-b289-467e-8458-8145782f5f18.jpeg')  }}" alt="" style="border-radius: 40px;">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/cc521657-aafc-4850-accc-71675f0b6d1e.jpeg')  }}" alt="" style="border-radius: 40px;">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/a72cd682-abde-4a7b-9927-4649bc6f856b.jpeg')  }}" alt="" style="border-radius: 40px;">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/bd6b9ad4-e4af-4a74-b9da-7accf4ebbabb.jpeg')  }}" alt="" style="border-radius: 40px;">
+            <img src="{{ url_for('static', filename='imagens/eventos-fotos/9384560e-9017-4db8-b9fc-d32aa90c5d5f.jpeg')  }}" alt="" style="border-radius: 40px;">
+    </div>
+    </div>
+    <p></p>
+    <a href="https://api.whatsapp.com/send/?phone=5531988140546&text=Ol%C3%A1%2C+gostaria+de+solicitar+um+or%C3%A7amento+para+meu+evento&type=phone_number&app_absent=0"><button class="btn-ir-cardapio"><h1>Reserve Já!</h1></button></a>
+    <p></p>
+</section>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,25 +1,30 @@
-{% extends "base.html" %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
+</head>
+<div style="background-color:black">
+    {% include "base.html" %}
+</div>
 {% block content %}
+<div class="carrinho">
+    <h2> Carrinho </h2>
 
-<h2> Carrinho </h2>
+    {% for carrinho, descricao, nome, imagem in carrinho %}
+        {% include '_produto.html' %}
+    {% endfor %}
 
-{% for carrinho, descricao, nome, imagem in carrinho %}
-    {% include '_produto.html' %}
-{% endfor %}
+    {% if total !=  0%}
+        <h3> Total: {{total}}</h3>
+        <div>
+            <form action="" method="POST">
+                <button type="submit">Pedir</button>
+            </form>
+        </div>  
+    {%endif%}
 
-{% if total !=  0%}
-    <h3> Total: {{total}}</h3>
-    <div>
-        <form action="" method="POST">
-            <button type="submit">Pedir</button>
-        </form>
-    </div>  
-{%endif%}
-
-{% if total ==  0 %}
-    <h3> Carrinho vazio... acesse o <a href="{{ url_for('cardapio')}}">cardapio</a> para fazer seu pedido </h3>
-{%endif%}
-
-
+    {% if total ==  0 %}
+        <h3> Carrinho vazio... acesse o <a href="{{ url_for('cardapio')}}">cardapio</a> para fazer seu pedido </h3>
+    {%endif%}
+</div>
+{% include "footer.html" %}
 
 {% endblock %}

@@ -1,7 +1,18 @@
-<h3> {{prato.nome}} </h3> 
-<p> {{prato.descricao}}</p>
-<p> Valor: R${{prato.valor}}</p>
-<img src="{{ url_for('static', filename='imagens/Imagens cardapio/' + prato.imagem.lower()) }}" width="150px">
+<head>     
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pratos.css') }}">
+</head>
+
+
+<div>
+    <h3 class="prato"> {{prato.nome}} </h3> 
+    <p class="comment"> {{prato.descricao}}</p>
+    <h3 class="price"> Valor: R${{prato.valor}}</h3>
+</div>
+<div class="imagem">
+    <img src="{{ url_for('static', filename='imagens/Imagens cardapio/' + prato.imagem.lower()) }}" width="150px">
+</div>
+
+
 
 {% if user.cargo == 'Gerente' or user.cargo == 'Funcionário'%}
 <div>
